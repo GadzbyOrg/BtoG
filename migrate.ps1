@@ -2,7 +2,7 @@
 $ContainerName = "migration_staging_db"
 $DbName = "old_staging_db"
 $DbPassword = "password"
-$HostPort = "5433"
+$HostPort = "5434"
 $DumpFilePath = ".\backup_borgia.dump"
 
 # Check if dump file exists
@@ -56,7 +56,8 @@ Write-Host "Restore complete logs saved to restore_log.txt" -ForegroundColor Gre
 # 5. Run Python ETL Script
 Write-Host "Running Python ETL script..." -ForegroundColor Yellow
 try {
-    #python etl.py
+    .venv/Scripts/activate
+    python script.py
 }
 catch {
     Write-Host "Python script failed. Check your Python installation." -ForegroundColor Red
@@ -64,7 +65,7 @@ catch {
 
 # 6. Cleanup
 Write-Host "🧹 Shutting down container..."
-#docker stop $ContainerName
-#docker rm $ContainerName
+docker stop $ContainerName
+docker rm $ContainerName
 
 Write-Host "--- PROCESS COMPLETE ---" -ForegroundColor Cyan

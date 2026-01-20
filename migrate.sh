@@ -49,11 +49,11 @@ echo "✅ Restore complete (logs saved to restore_log.txt)."
 
 # 5. Run Python script
 echo "Running Python script..."
-#python3 script.py
+python3 script.py
 
 # 6. Cleanup
 echo "Shutting down container..."
-#docker stop $CONTAINER_NAME
-#docker rm $CONTAINER_NAME
+docker stop $CONTAINER_NAME
+docker rm $CONTAINER_NAME
 
 echo "--- 🎉 PROCESS COMPLETE ---"

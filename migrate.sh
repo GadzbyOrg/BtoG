@@ -4,7 +4,7 @@
 CONTAINER_NAME="migration_staging_db"
 DB_NAME="old_staging_db"
 DB_PASSWORD="password"
-HOST_PORT="5433"
+HOST_PORT="5434"
 DUMP_FILE_PATH="./backup_borgia.dump"
 
 # Check if dump file exists
